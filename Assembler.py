@@ -42,7 +42,7 @@ def lineSolver(instruction,lineIndex):
         elements.append(instruction[instruction.find(' ')+1:instruction.find(',')])
         elements.append(instruction[instruction.find(',')+1:instruction.rfind('\n')])
     if ((elements[-1])in(labelIndex)):
-        elements[-1]=str((lineIndex-labelIndex[elements[-1]])*4)
+        elements[-1]=str((labelIndex[elements[-1]]-lineIndex)*4)
     '''funct3 and funct7 for R type instructions'''  
     basicR=['add','sub','sll','slt','sltu','xor','srl','or','and']
     RinstList=[['add','000','0000000'],['sub','000','0100000'],['sll','001','0000000'],['slt','010','0000000'],['sltu','011','0000000'],['xor','100','0000000'],['srl','101','0000000'],['or','110','0000000'],['and','111','0000000']]
